@@ -1,0 +1,9 @@
+1. Create a workspace 'flasktodo' and share with your partner.
+
+2. Create a simple 'Hi' flask project and run it.
+
+3. Create an index.html and render it.
+
+4. Create a git repo (locally) and commit the initial code.
+
+5. Create a Data Structure to store Todo Items in memory (Discuss)
