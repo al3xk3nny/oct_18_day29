@@ -6,4 +6,20 @@
 
 4. Create a git repo (locally) and commit the initial code.
 
-5. Create a Data Structure to store Todo Items in memory (Discuss)
+5. Create a Data Structure to store Todo Items in memory.
+
+6. Hard code 2-3 items in the Data Structure.
+
+7. Render the todo items on the index.html page.
+
+8. Add a page called todo_form.html which contains a form for adding todo items.
+
+9. Add a link to index.html to display todo_form.html (using python and render_template, not a direct link)
+
+10. Code the back end for the todo_form so that you can add items to the list.
+
+11. Add a link called 'Edit' beside each item in the list on index.html.
+
+12. Make the 'Edit' link bring the user to the todo_form but with all the fields pre-populated with the item they are editing.
+
+13. If the user modifies the details in the form and hits save it should be updated in the database.

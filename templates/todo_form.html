@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <h2>ToDo Form</h2>
+    
+    <hr>
+    
+    <form action="/add" method="POST">
+        <label id="id_todo_name">Name:</label>
+        <input type="text" id="id_todo_name" name="add_name" placeholder="Add Name" />
+        <br>
+        <label id="id_todo_description">Description:</label>
+        <input type="text" id="id_todo_description" name="add_description" placeholder="Add Description" />
+        <br>
+        <label id="id_todo_urgent">Urgent:</label>
+        <input type="radio" id="id_todo_urgent" name="add_urgent" />
+        <br>
+        <input type="submit" value="Add" />
+    </form>
+    
+{% endblock content %}
