@@ -8,13 +8,15 @@ tasks = {
 		"id": 1,
 		"name": "Get milk",
 		"description": "Make sure it's low fat",
-		"is_urgent": False
+		"is_urgent": False,
+		"is_done": False
 	},
 	2 : {
 		"id": 2,
 		"name": "Get tea",
 		"description": "Make sure it's Barry's",
-		"is_urgent": True
+		"is_urgent": True,
+		"is_done": True
 	},
 }
 
@@ -24,6 +26,7 @@ next_id = 3
 def show_index():
     return render_template("index.html", tasks=tasks.values())
 
+
 @app.route("/add", methods=["GET", "POST"])
 def show_form():
     if request.method == "POST":
@@ -32,15 +35,32 @@ def show_form():
             "id": next_id,
     		"name": request.form["add_name"],
     		"description": request.form["add_description"],
-    		"is_urgent": "is_request" in request.form
+    		"is_urgent": "add_urgent" in request.form,
+    		"is_done": "add_done" in request.form
         }
         
         tasks[next_id] = new_item
         next_id += 1
         return redirect("/")
     else:
-         return render_template("todo_form.html")     
+         return render_template("add_task_form.html")     
 
+
+@app.route("/edit/<int:task_num>", methods=["GET", "POST"])
+def show_edit_form(task_num):
+    if request.method == "POST":
+        edited_item = {
+            "id": task_num,
+    		"name": request.form["edit_name"],
+    		"description": request.form["edit_description"],
+    		"is_urgent": "edit_urgent" in request.form,
+    		"is_done": "edit_done" in request.form
+        }
+        
+        tasks[task_num] = edited_item
+        return redirect("/")
+    else:    
+        return render_template("edit_task_form.html", tasks=tasks[task_num])
 
 
 if __name__ == "__main__":

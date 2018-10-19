@@ -23,3 +23,9 @@
 12. Make the 'Edit' link bring the user to the todo_form but with all the fields pre-populated with the item they are editing.
 
 13. If the user modifies the details in the form and hits save it should be updated in the database.
+
+14. Add a property called 'done' to the tasks which is a boolean.
+
+15. On the tasks list (index.html), use strikethrough to show that done items are done.
+
+16. Modify the add_task_form and edit_task_form to allow 'done' to be set or changed.

@@ -8,9 +8,14 @@
 
     {% for t in tasks %}
     <p>{{ t.id }}</p>
-    <p>{{ t.name }}</p>
+    
+    
+    <p class="{% if t.is_urgent %}urgent{% endif %} {% if t.is_done %}strike{% endif %}">{{ t.name }}</p>
+    
     <p>{{ t.description }}</p>
     <p>{{ t.is_urgent }}</p>
+    <p>{{ t.is_done }}</p>
+    <p><a href="/edit/{{ t.id }}">Edit</a></p>
     {% endfor %}
     
     <a href="/add">Add Task</a>

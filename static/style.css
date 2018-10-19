@@ -1,0 +1,8 @@
+
+.urgent {
+    color: red;
+}
+
+.strike {
+    text-decoration: line-through;
+}
